@@ -1,0 +1,12 @@
+<%= form_with method: :get  do |f| %>
+  <div>
+    <%= f.label :user_id, "Enter User ID" %>
+    <%= f.text_field :user_id %>
+     <%= f.submit  "search" %>
+    <% end %>
+  </div>
+<% if @photos %>
+  <% @photos.each do |photo| %>
+    <%= image_tag "#{Flickr.url(photo)}" %>
+  <% end %>
+<% end %>
